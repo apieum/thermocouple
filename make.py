@@ -33,7 +33,7 @@ base_dir = os.path.realpath(os.getcwd())
 environment = Environment()
 environment.load()
 # Override source directory name
-# environment.src_dir = 'src'  # default 'src
+environment.src_dir = 'thermocouple'
 environment.extra_libs = [os.path.join(base_dir, environment.src_dir)]
 environment.build_base = 'build'
 environment.output_dir = os.path.join(environment.build_base, environment.src_dir)

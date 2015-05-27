@@ -57,7 +57,7 @@ test(it_converts_hot_junction_voltage_into_temperature) {
 }
 
 test(it_returns_hot_junction_temp_from_voltage_and_cold_junction_temp) {
-    Thermocouple<TypeE, Celsius> thermo;
+    Thermocouple<TypeE> thermo;
     double temperature = floor(thermo.temperature(4.20, 25.0)+0.5);
     assertEqual(91.0, temperature);
 }

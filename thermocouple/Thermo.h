@@ -88,7 +88,7 @@ class Thermocouple
             return last_valid;
         }
 
-        virtual HotCoef coefs_from_temp(double temp=20.0)
+        virtual HotCoef coefs_from_temp(double temp)
         {
             Celsius c_temp = TempUnit(temp);
             return search_coef_where(c_temp, (&lower_or_equal_than_max_temp));
@@ -99,7 +99,7 @@ class Thermocouple
             return search_coef_where(voltage, (&lower_or_equal_than_max_volt));
         }
 
-        virtual double cold_temp_to_volt(double temp=20.0)
+        virtual double cold_temp_to_volt(double temp)
         {
             Celsius Tj = TempUnit(temp);
             ColdCoef c = ThermoType.cold;
@@ -118,7 +118,7 @@ class Thermocouple
             return Tj;
         }
 
-        virtual double temperature(double voltage, double temp=20.0)
+        virtual double temperature(double voltage, double temp=TempUnit(Celsius(20.0)))
         {
             double Vcj = cold_temp_to_volt(temp);
             return hot_volt_to_temp(voltage + Vcj);

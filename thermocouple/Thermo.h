@@ -38,6 +38,8 @@ struct HotCoef
 };
 struct ColdCoef
 {
+    double min_volt;
+    double max_volt;
     double min_temp;
     double max_temp;
     double To;

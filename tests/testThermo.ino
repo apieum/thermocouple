@@ -62,6 +62,12 @@ test(it_returns_hot_junction_temp_from_voltage_and_cold_junction_temp) {
     assertEqual(91.0, temperature);
 }
 
+test(Thermocouple_TypeB_returns_coefs1_when_voltage_is_higher_than_maximum) {
+    Thermocouple<TypeB, Celsius> thermo;
+    bool are_equals = (thermo.coefs_from_volt(14.0) == TypeB.hot[1]);
+    assertTrue(are_equals);
+}
+
 void setup() {}
 
 

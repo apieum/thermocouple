@@ -90,11 +90,29 @@ TempCoefs TypeT = {
 
 
 Celsius::operator Kelvin() {
-    return Kelvin(temp  + 273.150);
+    return Kelvin(temp + 273.150);
 };
+
+Celsius::operator Fahrenheit() {
+    return Fahrenheit(temp * 9.0/5.0 + 32);
+};
+
 Kelvin::operator Celsius() {
     return Celsius(temp - 273.150);
 };
+
+Kelvin::operator Fahrenheit() {
+    return Fahrenheit(temp * 9.0/5.0 - 459.67);
+};
+
+Fahrenheit::operator Celsius() {
+    return Celsius((temp - 32.0) * 5.0/9.0);
+};
+
+Fahrenheit::operator Kelvin() {
+    return Kelvin((temp + 459.67) * 5.0/9.0 );
+};
+
 bool operator==(const HotCoef& lhs, const HotCoef& rhs)
 {
     return lhs.min_temp == rhs.min_temp

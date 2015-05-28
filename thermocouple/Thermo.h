@@ -2,12 +2,14 @@
 #define THERMO_H
 
 class Kelvin;
+class Fahrenheit;
 class Celsius
 {
     public:
         double temp;
         Celsius(double _temp): temp(_temp) {};
         operator Kelvin();
+        operator Fahrenheit();
         operator double() { return temp; };
 };
 
@@ -17,6 +19,17 @@ class Kelvin
         double temp;
         Kelvin(double _temp): temp(_temp) {};
         operator Celsius();
+        operator Fahrenheit();
+        operator double() { return temp; };
+};
+
+class Fahrenheit
+{
+    public:
+        double temp;
+        Fahrenheit(double _temp): temp(_temp) {};
+        operator Celsius();
+        operator Kelvin();
         operator double() { return temp; };
 };
 

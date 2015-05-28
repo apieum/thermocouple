@@ -56,7 +56,15 @@ struct TempCoefs
     HotCoef hot[5];
 };
 
+extern TempCoefs TypeB;
 extern TempCoefs TypeE;
+extern TempCoefs TypeJ;
+extern TempCoefs TypeK;
+extern TempCoefs TypeN;
+extern TempCoefs TypeR;
+extern TempCoefs TypeS;
+extern TempCoefs TypeT;
+
 extern bool operator==(const HotCoef& lhs, const HotCoef& rhs);
 
 template <TempCoefs &ThermoType, typename TempUnit=Celsius>
